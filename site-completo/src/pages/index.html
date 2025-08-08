@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automotivo em ação - Página Inicial</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #eaf6ff 0%, #fff3e0 100%);
+            margin: 0;
+            color: #222;
+        }
+        header, footer {
+            background: #005fa3;
+            color: #fff;
+            padding: 24px 0 16px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        header nav {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            align-items: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background: #fff;
+            color: #005fa3;
+            padding: 8px 18px;
+            font-size: 1em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .dropbtn:hover {
+            background: #eaf6ff;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            z-index: 1;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #005fa3;
+            padding: 12px 18px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+        .dropdown-content a:hover {
+            background: #eaf6ff;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            padding: 40px;
+        }
+        h1, h2 {
+            color: #005fa3;
+        }
+        .categorias {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .categoria {
+            flex: 1 1 220px;
+            background: #eaf6ff;
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+            transition: transform 0.2s;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .categoria:hover {
+            transform: scale(1.04);
+            box-shadow: 0 4px 16px rgba(0,95,163,0.10);
+        }
+        .modelos-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+        .modelo {
+            background: #f0f8ff;
+            border-radius: 10px;
+            padding: 22px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+            transition: transform 0.2s;
+        }
+        .modelo:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 16px rgba(0,95,163,0.10);
+        }
+        .modelo h3 {
+            margin-top: 0;
+            color: #005fa3;
+        }
+        .servicos {
+            background: #eaf6ff;
+            border-radius: 10px;
+            padding: 28px;
+            margin-bottom: 36px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+        }
+        .servicos h2 {
+            margin-top: 0;
+        }
+        .filmes {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .filme {
+            flex: 1 1 220px;
+            background: #fff3e0;
+            border-radius: 10px;
+            padding: 22px;
+            text-align: center;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+            transition: transform 0.2s;
+        }
+        .filme:hover {
+            transform: scale(1.04);
+            box-shadow: 0 4px 16px rgba(255,163,0,0.10);
+        }
+        .noticias {
+            margin-top: 36px;
+        }
+        .noticias article {
+            background: #f0f8ff;
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+        }
+        ul {
+            padding-left: 18px;
+        }
+        a {
+            color: #005fa3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 900px) {
+            main { padding: 18px; }
+            .categorias, .filmes { flex-direction: column; gap: 18px; }
+            .modelos-lista { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Automotivo em ação</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <div class="dropdown">
+                <button class="dropbtn">Modelos ▼</button>
+                <div class="dropdown-content">
+                    <a href="#modelos-suv">SUV</a>
+                    <a href="#modelos-esportivo">Esportivos</a>
+                    <a href="#modelos-sedan">Sedan</a>
+                    <a href="#modelos-pickup">Pickups</a>
+                    <a href="#modelos-hatch">Hatch</a>
+                    <a href="#modelos-eletrico">Elétricos</a>
+                    <a href="#modelos-classico">Clássicos</a>
+                </div>
+            </div>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Bem-vindo ao Automotivo em ação!</h2>
+            <p>O melhor portal para apaixonados por carros. Aqui você encontra novidades, dicas, categorias, curiosidades e até filmes sobre carros!</p>
+        </section>
+        
+        <!-- Categorias separadas -->
+        <section>
+            <h2>Categorias de Carros</h2>
+            <div class="categorias"><div class="categoria"><strong>SUV</strong><br>Versatilidade e espaço para toda a família.</div></div>
+            <div class="categorias"><div class="categoria"><strong>Esportivos</strong><br>Velocidade e design arrojado.</div></div>
+            <div class="categorias"><div class="categoria"><strong>Sedan</strong><br>Conforto e elegância para o dia a dia.</div></div>
+            <div class="categorias"><div class="categoria"><strong>Pickups</strong><br>Força e praticidade para o trabalho.</div></div>
+            <div class="categorias"><div class="categoria"><strong>Hatch</strong><br>Compactos e econômicos para a cidade.</div></div>
+            <div class="categorias"><div class="categoria"><strong>Elétricos</strong><br>Tecnologia e sustentabilidade.</div></div>
+            <div class="categorias"><div class="categoria"><strong>Clássicos</strong><br>Modelos que marcaram época.</div></div>
+        </section>
+
+        <!-- Modelos de carros ampliados -->
+        <section id="modelos">
+            <h2>Modelos de Carros</h2>
+            <div class="modelos-lista">
+                <!-- SUVs -->
+                <div class="modelo" id="modelos-suv">
+                    <h3>Jeep Compass (SUV)</h3>
+                    <p>Conforto, tecnologia e ótimo desempenho.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Hyundai Creta (SUV)</h3>
+                    <p>Design moderno, espaço interno e conectividade.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Volkswagen T-Cross (SUV)</h3>
+                    <p>Versatilidade urbana e segurança.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Honda HR-V (SUV)</h3>
+                    <p>Praticidade, economia e estilo.</p>
+                </div>
+                <!-- Esportivos -->
+                <div class="modelo" id="modelos-esportivo">
+                    <h3>Chevrolet Camaro (Esportivo)</h3>
+                    <p>Potência e emoção ao dirigir.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Porsche 911 (Esportivo)</h3>
+                    <p>Ícone mundial de desempenho e luxo.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Ferrari 488 GTB (Esportivo)</h3>
+                    <p>Design italiano e velocidade extrema.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Ford Mustang (Esportivo)</h3>
+                    <p>Clássico americano com muita força.</p>
+                </div>
+                <!-- Sedans -->
+                <div class="modelo" id="modelos-sedan">
+                    <h3>Honda Civic (Sedan)</h3>
+                    <p>Conforto, tecnologia e economia.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Toyota Corolla (Sedan)</h3>
+                    <p>Referência em durabilidade e valor de revenda.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Chevrolet Onix Plus (Sedan)</h3>
+                    <p>Moderno, econômico e tecnológico.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Volkswagen Virtus (Sedan)</h3>
+                    <p>Espaço interno e desempenho.</p>
+                </div>
+                <!-- Pickups -->
+                <div class="modelo" id="modelos-pickup">
+                    <h3>Ford Ranger (Pickup)</h3>
+                    <p>Robusta e versátil.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Chevrolet S10 (Pickup)</h3>
+                    <p>Força e tecnologia para o trabalho.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Toyota Hilux (Pickup)</h3>
+                    <p>Durabilidade e potência.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Fiat Toro (Pickup)</h3>
+                    <p>Design inovador e praticidade.</p>
+                </div>
+                <!-- Hatch -->
+                <div class="modelo" id="modelos-hatch">
+                    <h3>Volkswagen Polo (Hatch)</h3>
+                    <p>Compacto, moderno e econômico.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Fiat Argo (Hatch)</h3>
+                    <p>Design jovem e tecnologia.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Renault Kwid (Hatch)</h3>
+                    <p>O mini SUV dos compactos.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Chevrolet Onix (Hatch)</h3>
+                    <p>Líder de vendas, econômico e conectado.</p>
+                </div>
+                <!-- Elétricos -->
+                <div class="modelo" id="modelos-eletrico">
+                    <h3>Tesla Model 3 (Elétrico)</h3>
+                    <p>Autonomia, tecnologia e sustentabilidade.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Nissan Leaf (Elétrico)</h3>
+                    <p>Popularização dos elétricos no Brasil.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Renault Zoe (Elétrico)</h3>
+                    <p>Compacto e eficiente.</p>
+                </div>
+                <div class="modelo">
+                    <h3>BYD Dolphin (Elétrico)</h3>
+                    <p>Novidade chinesa com ótimo custo-benefício.</p>
+                </div>
+                <!-- Clássicos -->
+                <div class="modelo" id="modelos-classico">
+                    <h3>Volkswagen Fusca (Clássico)</h3>
+                    <p>Símbolo de simplicidade e carisma.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Chevrolet Opala (Clássico)</h3>
+                    <p>Ícone nacional dos anos 70 e 80.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Ford Maverick (Clássico)</h3>
+                    <p>Muscle car brasileiro de respeito.</p>
+                </div>
+                <div class="modelo">
+                    <h3>Fiat 147 (Clássico)</h3>
+                    <p>Primeiro carro nacional da Fiat.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat simples para visitantes -->
+        <section id="chat" style="margin-bottom:36px;">
+            <h2>Converse com outros apaixonados por carros!</h2>
+            <iframe 
+                src="https://www3.cbox.ws/box/?boxid=3529632&boxtag=Qw2gkA" 
+                width="100%" 
+                height="350" 
+                allowtransparency="yes" 
+                frameborder="0" 
+                scrolling="auto"
+                style="border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,0.07);background:#f0f8ff;">
+            </iframe>
+            <p style="font-size:0.95em;color:#555;">
+                Participe do chat e compartilhe suas experiências, dúvidas e dicas sobre o mundo automotivo!
+            </p>
+        </section>
+
+        <!-- Notícias automotivas rotativas -->
+        <section class="noticias">
+            <h2>Últimas Notícias</h2>
+            <div id="noticia-rotativa">
+                <article>
+                    <h3>Volkswagen lança ID.4 elétrico no Brasil</h3>
+                    <p>O SUV 100% elétrico da Volkswagen chega ao Brasil com autonomia de até 500 km e tecnologia de ponta.</p>
+                </article>
+            </div>
+        </section>
+        <script>
+            // Notícias reais e recentes do mundo automotivo
+            const noticias = [
+                {
+                    titulo: "Volkswagen lança ID.4 elétrico no Brasil",
+                    texto: "O SUV 100% elétrico da Volkswagen chega ao Brasil com autonomia de até 500 km e tecnologia de ponta."
+                },
+                {
+                    titulo: "Honda Civic 2025 estreia com motor híbrido",
+                    texto: "O novo Honda Civic chega ao Brasil com tecnologia híbrida, prometendo mais economia e menor emissão de poluentes."
+                },
+                {
+                    titulo: "BYD inicia construção de fábrica de elétricos na Bahia",
+                    texto: "A chinesa BYD começou as obras de sua fábrica de veículos elétricos em Camaçari, com produção prevista para 2026."
+                },
+                {
+                    titulo: "Chevrolet Onix 2025 ganha novo visual e motor turbo",
+                    texto: "A Chevrolet apresentou o Onix 2025, com design renovado e mais tecnologia embarcada."
+                },
+                {
+                    titulo: "Mercado de carros usados cresce 12% em 2025",
+                    texto: "Segundo a Fenabrave, a venda de carros usados aumentou 12% no primeiro semestre de 2025."
+                },
+                {
+                    titulo: "Tesla Model Y é confirmado para o Brasil",
+                    texto: "A Tesla anunciou que o Model Y será vendido oficialmente no Brasil a partir do segundo semestre de 2025."
+                }
+            ];
+            let atual = 0;
+            setInterval(() => {
+                atual = (atual + 1) % noticias.length;
+                document.getElementById('noticia-rotativa').innerHTML = `
+                    <article>
+                        <h3>${noticias[atual].titulo}</h3>
+                        <p>${noticias[atual].texto}</p>
+                    </article>
+                `;
+            }, 8000); // Troca a cada 8 segundos
+        </script>
+
+        <!-- Filmes de carros -->
+        <section>
+            <h2>Filmes de Carros</h2>
+            <div class="filmes">
+                <div class="filme">
+                    <h3>Velozes e Furiosos</h3>
+                    <p>A franquia mais famosa sobre carros, corridas e ação.</p>
+                </div>
+                <div class="filme">
+                    <h3>Carros (Disney)</h3>
+                    <p>Uma animação divertida para todas as idades, com personagens carismáticos.</p>
+                </div>
+                <div class="filme">
+                    <h3>Ford vs Ferrari</h3>
+                    <p>Baseado em fatos reais, mostra a rivalidade entre duas gigantes do automobilismo.</p>
+                </div>
+                <div class="filme">
+                    <h3>Em Ritmo de Fuga</h3>
+                    <p>Filme de ação com perseguições incríveis e trilha sonora marcante.</p>
+                </div>
+                <div class="filme">
+                    <h3>Need for Speed</h3>
+                    <p>Adaptação do famoso jogo, com corridas eletrizantes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Automotivo em ação. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
