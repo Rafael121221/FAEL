@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Rafael Santos Alves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            min-height: 100vh;
+            color: #222;
+            /* Imagem de computador como fundo */
+            background: 
+                linear-gradient(120deg, #2193b0cc 0%, #6dd5edcc 100%),
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(33,147,176,0.18);
+            padding: 48px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, #6dd5ed 60%, transparent 100%);
+            opacity: 0.25;
+            z-index: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #2193b0;
+            margin-bottom: 8px;
+            font-size: 2.6em;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 28px;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .info {
+            font-size: 1.15em;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            color: #333;
+            background: #f7fbfc;
+            border-left: 4px solid #2193b0;
+            padding: 18px 22px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(33,147,176,0.06);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.3em;
+            color: #2193b0;
+            margin-bottom: 18px;
+            margin-top: 36px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        .skill {
+            background: linear-gradient(120deg, #2193b0 0%, #6dd5ed 100%);
+            color: #fff;
+            padding: 16px 28px;
+            border-radius: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 16px rgba(33,147,176,0.10);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 140px;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+        .skill img {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            filter: drop-shadow(0 2px 4px rgba(33,147,176,0.15));
+            transition: transform 0.2s;
+        }
+        .skill:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 8px 24px rgba(33,147,176,0.18);
+            background: linear-gradient(120deg, #6dd5ed 0%, #2193b0 100%);
+        }
+        .skill:hover img {
+            transform: scale(1.15) rotate(-8deg);
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 1em;
+            margin-top: 40px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 8px;
+            }
+            .skills {
+                gap: 12px;
+            }
+            .skill {
+                min-width: 100px;
+                padding: 10px 12px;
+                font-size: 0.95em;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rafael Santos Alves</h1>
+        <div class="subtitle">17 anos &bull; Estudante de TI</div>
+        <div class="info">
+            Desde sempre tive grande interesse por programação e jogos, o que me levou a estudar desenvolvimento de jogos e explorar novas tecnologias.<br>
+            Sempre fui um menino bem atencioso quando o assunto era robótica ou qualquer coisa relacionada à tecnologia.<br>
+            Atualmente curso Informática e estou me especializando em Tecnologia da Informação.<br>
+            Apaixonado por criar soluções inovadoras e aprender cada vez mais sobre o universo da programação.
+        </div>
+        <div class="section-title">Minhas Habilidades</div>
+        <div class="skills">
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML">
+                HTML
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+                CSS
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript">
+                JavaScript
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/ms-excel.png" alt="Excel">
+                Excel (básico)
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/controller.png" alt="Controle de Videogame">
+                Criação de Jogos
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/robot-2.png" alt="Robótica">
+                Robótica
+            </div>
+        </div>
+        <div class="footer">
+            &copy; 2025 Rafael Santos Alves &mdash; Portfólio Pessoal
+        </div>
+    </div>
+</body>
+</html>
